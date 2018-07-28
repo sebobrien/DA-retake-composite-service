@@ -1,0 +1,26 @@
+server:
+ port: 0  
+ 
+spring:
+  jackson:
+    mapper:
+      accept_case_insensitive_properties: true
+      
+eureka:
+ instance:
+  leaseRenewalIntervalInSeconds: 10
+  instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+ client: 
+  registryFetchIntervalSeconds: 5 
+    
+---
+
+spring:
+  profiles: docker
+  
+eureka:
+ instance:
+  hostname: composite-service
+ client:
+  serviceUrl:
+   defaultZone: http://eureka-service:8761/eureka/    

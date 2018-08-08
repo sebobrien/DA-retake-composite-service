@@ -12,6 +12,11 @@ script:
 - mvn clean package dockerfile:build dockerfile:push
 before_install:
 - chmod +x mvnw
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
 env:
   matrix:
   - secure: RS3Cg092nwqOIFkwuCL/78BK/tliNcwGzNMcp0FkeGFrUpY1dnxbo84gFPkYsr1VGHXURdQhpWgYWgk5iXYnkZCdaHIfZk0PrtkZVTZCmlPXVYj3qkKD4l4lV7hPBctizaYN841u4ZvTOjS8mfSqiTUbTZN+osRg9Qt6W3eH6PMnD85lXsNlrrmg/bNggDy6djoAJnWc9cV5qhUr7aNLp3iUJirySHxytoLJWHwtL88p9vrJmKIAdecO4WpQ3CGxh7mmSdFZhcIIxrchxK2jc7S+9bM9TjJaDK+MewCBqzI3g5YVzbIoNasy1e7PYsGVmq1f4Gnyhb/Ev/mpgcFVO6PVc8C4fTBbGAAe6mUFrVZMx792IYFMyWUUn+NxUH3QUSQIarB1WkX3lOsgY9ZQ5hsJGuoZ7t+jsgaZ2UVuVpTa16hkT8hCZ1jJOiW4szUB+SVda1nUql5anmtiqefjl1cxR6Hs+Ma9lgLl4pnqIwFWhIDIQonnGX1yTTofHh1w6K0xn4vVYkjPwG+iMYY5sIQvzQ7//eMpAES4g7ss/M7b3nBCnAuQuuRiqPwvXqSUe7PE1Z3tr+jDJKRPPnyiQG2ApLDo+bwaVXVea+WQUj3Haj1SSJZ18JXCOW3XH8vwdkXsjdFJ3YG/s4BmayD94oQuJ5qjYGlmwdEN3lbW5rc=

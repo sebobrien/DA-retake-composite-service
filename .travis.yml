@@ -8,7 +8,7 @@ sudo: required
 services:
 - docker
 script:
-- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD --password-stdin
 - mvn clean package dockerfile:build dockerfile:push
 before_install:
 - chmod +x mvnw
